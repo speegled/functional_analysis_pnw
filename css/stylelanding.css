@@ -105,7 +105,6 @@ body, html {
 	.mynavblock {
 		width: 100%;
 		background-color: var(--halfsmoke); /*pink;*/
-		overflow-x: scroll;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		container-name: menublock;
