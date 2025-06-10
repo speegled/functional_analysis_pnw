@@ -86,7 +86,6 @@ body, html {
     height: auto; /*Leave is as auto.  If we make it 100%; instead then position:sticky doesn't work...*/
 	background-color: var(--antiflashwhite);
 	font-family: sans-serif;
-	/*overflow: scroll;*/
 }
 
 
@@ -105,9 +104,6 @@ body, html {
 	.mynavblock {
 		width: 100%;
 		background-color: var(--halfsmoke); /*pink;*/
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-auto-rows: 150px;
 		container-name: menublock;
 		container-type: inline-size;
 	}
@@ -127,38 +123,33 @@ body, html {
 	}
 		
 	.parent {
-		width: 102px; /*8rem; /*15rem; /*50%;*/
-		padding: 0.25rem 0.25rem; /*10px;*/
-		margin: 0.25rem 0.25rem;
+		width: 50%;
+		padding: 0.25rem; /*10px;*/
+		margin: 0.25rem 0;
 		border-radius: 0.25rem;
 		background-color: var(--smoke); /*rosybrown;*/
-		display: block;
 		container-name: parentblock;
 		container-type: inline-size;
 	}
 	
 	@container menublock (min-width: 500px) {
 		.parent {
-			width: 15rem; 8rem; /*15rem;*/
+			width: 15rem;
 		}
 	}
 	
 	.parent a {
-		/*float: left;*/
-    		/*float: none;*/
-    		display: block;
-    		width: 100%;
-		padding: 12px;
-		color: white;
-		font-size: 17px;
-    		text-align: left;
-	}	
-	.child a {
-	  color: midnightblue;
-	}	
+	/*float: left;*/
+    /*float: none;*/
+    display: block;
+    width: 100%;
+	padding: 12px;
+	color: white;
+	font-size: 17px;
+    text-align: left;
+	}		
 		.children {
-			min-width: 200px;/*75cqi;*/
-			width: auto
+			width: 87cqi;/*75cqi;*/
 			padding: 0.25rem; /*10px;*/
 			margin: 0.25rem 0;
 			margin-left: 2rem;
@@ -176,15 +167,12 @@ body, html {
 			}
 		.children {
 			display: none;
-			position: absolute;
-			z-index: 11;
+			position: relative: /*absolute;*/
 		}
 		.parent:hover {
 				background-color: var(--smoke); /*var(--raisinblack);*/
 		}
-		.parent:hover .children{
-			display:block;
-		}
+		.parent:hover .children{display:block;}
 
 
 /****************************
@@ -414,13 +402,3 @@ td {
 		font-weight: bold;
 		color: coral;
 	}
-/*
-.responsive-banner-img {
-    width: 100%; /* Keep width at 100% of its container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 60vh; /* Set a maximum height in pixels for larger screens */
-    /* Or use viewport units for more fluid responsiveness: */
-    /* max-height: 30vh; */ /* Max height is 30% of viewport height */
-    object-fit: cover; /* This will crop the image if necessary to fit the container while maintaining aspect ratio */
-}
-*/
