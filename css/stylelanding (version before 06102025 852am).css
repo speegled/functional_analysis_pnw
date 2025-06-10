@@ -1,0 +1,411 @@
+/* The theme colors
+[{
+        "name": "theme_raisin_black",
+        "hex": "252424",
+        "rgb": [37, 36, 36],
+        "cmyk": [0, 3, 3, 85],
+        "hsb": [0, 3, 15],
+        "hsl": [0, 1, 14],
+        "lab": [14, 0, 0]
+    }, {
+        "name": "theme_antiflash_white",
+        "hex": "f1f2f2",
+        "rgb": [241, 242, 242],
+        "cmyk": [0, 0, 0, 5],
+        "hsb": [180, 0, 95],
+        "hsl": [180, 4, 95],
+        "lab": [95, 0, 0]
+    }, {
+        "name": "theme_persian_orange",
+        "hex": "c88c61",
+        "rgb": [200, 140, 97],
+        "cmyk": [0, 30, 52, 22],
+        "hsb": [25, 52, 78],
+        "hsl": [25, 48, 58],
+        "lab": [63, 18, 32]
+    }, {
+        "name": "theme_periwinkle",
+        "hex": "c1bedc",
+        "rgb": [193, 190, 220],
+        "cmyk": [12, 14, 0, 14],
+        "hsb": [246, 14, 86],
+        "hsl": [246, 30, 80],
+        "lab": [78, 7, -15]
+    }, {
+        "name": "theme_dim_gray", (also called smoke)
+        "hex": "746f65",
+        "rgb": [116, 111, 101],
+        "cmyk": [0, 4, 13, 55],
+        "hsb": [40, 13, 45],
+        "hsl": [40, 7, 43],
+        "lab": [47, 0, 6]
+    }, {
+        "name": "theme_brown_sugar",
+        "hex": "be7352",
+        "rgb": [190, 115, 82],
+        "cmyk": [0, 39, 57, 25],
+        "hsb": [18, 57, 75],
+        "hsl": [18, 45, 53],
+        "lab": [56, 26, 31]
+    }, {
+        "name": "theme_atomic_tangerine",
+        "hex": "f7b088",
+        "rgb": [247, 176, 136],
+        "cmyk": [0, 29, 45, 3],
+        "hsb": [22, 45, 97],
+        "hsl": [22, 87, 75],
+        "lab": [78, 21, 31]
+    }, {
+        "name": "theme_bone",
+        "hex": "d3d1c4",
+        "rgb": [211, 209, 196],
+        "cmyk": [0, 1, 7, 17],
+        "hsb": [52, 7, 83],
+        "hsl": [52, 15, 80],
+        "lab": [84, -2, 7]
+    }
+]
+*/
+
+:root {
+  --raisinblack: #252424;
+  --antiflashwhite: #f1f2f2;
+  --persianorange: #c88c61;
+  --periwinkle: #c1bedc;
+  --smoke: #746f65;
+  --halfsmoke: rgba(116, 111, 101, 0.5);
+  --thirdsmoke: rgba(116, 111, 101, 0.33);
+  --fifthsmoke: rgba(116, 111, 101, 0.2);
+  --brownsugar: #be7352;
+  --atomictangerine: #f7b088;
+  --bone: #d3d1c4;
+}
+
+
+body, html {
+    height: auto; /*Leave is as auto.  If we make it 100%; instead then position:sticky doesn't work...*/
+	background-color: var(--antiflashwhite);
+	font-family: sans-serif;
+	/*overflow: scroll;*/
+}
+
+
+/****************************
+* Style the header
+*****************************/
+ 
+.header {
+	width: 100%;
+	background-color: var(--antiflashwhite);
+	/*position: sticky;
+	top: 0ex;*/	
+}
+
+	/*header elements*/
+	.mynavblock {
+		width: 100%;
+		background-color: var(--halfsmoke); /*pink;*/
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		container-name: menublock;
+		container-type: inline-size;
+	}
+	
+	.mynavblock a {
+		text-decoration: none;
+	}
+	
+	.parent a:hover {
+		font-weight: bold;
+		color: var(--atomictangerine);
+	}
+	
+	.child a:hover {
+		font-weight: bold;
+		color: var(--brownsugar);
+	}
+		
+	.parent {
+		width: 8rem; /*15rem; /*50%;*/
+		padding: 0.25rem 0.25rem; /*10px;*/
+		margin: 0.25rem 0.25rem;
+		border-radius: 0.25rem;
+		background-color: var(--smoke); /*rosybrown;*/
+		display: block;
+		container-name: parentblock;
+		container-type: inline-size;
+	}
+	
+	@container menublock (min-width: 500px) {
+		.parent {
+			width: 8rem; /*15rem;*/
+		}
+	}
+	
+	.parent a {
+		/*float: left;*/
+    		/*float: none;*/
+    		display: block;
+    		width: 100%;
+		padding: 12px;
+		color: white;
+		font-size: 17px;
+    		text-align: left;
+	}		
+		.children {
+			width: 87cqi;/*75cqi;*/
+			padding: 0.25rem; /*10px;*/
+			margin: 0.25rem 0;
+			margin-left: 2rem;
+			border-radius: 0.25rem;
+			background-color: var(--bone);
+		}
+			.child {
+				width: 100%;
+				margin: 0.25rem 0;
+				border-radius: 0.25rem;
+			}
+			.child:hover {
+				background-color: var(--halfsmoke);
+				text-decoration: none;
+			}
+		.children {
+			display: none;
+			position: absolute;
+			z-index: 11;
+		}
+		.parent:hover {
+				background-color: var(--raisinblack);
+		}
+		.parent:hover .children{
+			display:block;
+		}
+
+
+/****************************
+* Style the navigation menu -- THIS WAS TAKEN OFF
+*****************************/
+.navbar {
+	width: 100%;
+	background-color: var(--smoke);
+	overflow: scroll; /*auto;*/
+	font-family: sans-serif;
+	display: none; /* BUT DON'T DELETE IT YET JUST IN CASE WE FORGOT SOMETHINGS */
+}
+
+/****************
+* Main content
+****************/
+a {
+	/*text-decoration: none;*/
+	color: midnightblue;
+}
+a:hover {
+	text-decoration: none;
+	color: var(--periwinkle);
+}
+a:link, a:visited {
+}
+
+h1 {
+	text-align: left;
+	font-size: 30px;
+	font-family: sans-serif;
+	color: var(--raisinblack);
+	font-weight: bold;
+	line-height: 1.3em;
+	/*margin-top: 13px;*/
+	border: 13px 0;
+	padding: 11px 0;
+}
+h2 {
+	font-size: 24px;
+	font-family: sans-serif;
+	color: var(--brownsugar);
+	font-weight: medium;
+	line-height: 1.1em;
+	border: 11px 0;
+	padding: 11px 0;
+	margin: 44px 0 12px 0;
+	/*border-bottom: 1px solid var(--bone);*/
+}
+h3 {
+	font-size: 20px;
+	color: var(--brownsugar);
+	font-weight: medium;
+	padding: 9px 0; /*100;*/
+	margin: 0 0 12px 0;
+}
+h4 {
+	font-size: 16px;
+	color: var(--brownsugar);
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+h5 {
+	font-size: 13px;
+	color: var(--brownsugar);
+	margin-bottom: 2em;
+}
+
+ul {
+	list-style-position: outside;
+	margin: 10px 3px 10px 15px;
+	padding: 0px 2px 0px 5px;
+	text-align: left;
+	text-indent: 2px;
+}
+li {
+	padding-bottom:1em;
+}
+
+table {
+	/*border-collapse: collapse; 
+	/*table-layout: fixed; */
+	width: 100%;
+}
+th { 
+	padding: 1ex; /*0.5em;*/ 
+	border: 1px solid var(--bone);
+	/*white-space: nowrap; overflow: hidden;*/ 
+}
+th { 
+	/*white-space: pre; */
+	text-align: left;
+	color: var(--raisinblack);
+}
+th { 
+	background-color: var(--fifthsmoke);
+}
+td {
+	padding-left: 2ex; /*0.5em;*/ 
+	/*border: 1px solid var(--bone); */
+	/*white-space: nowrap; overflow: hidden;*/ 
+}
+.warn {
+	color: red;
+}
+
+.main {
+	margin-left: 7%; /* Same as the width of the sidenav */
+	margin-right: 4%;
+	font-size: 20px; /* Increased text to enable scrolling */
+	padding: 14px 16px;
+	font-family: sans-serif;
+	line-height: 1.5;
+	color: var(--raisinblack);
+	text-align: justify;
+}
+
+.day {
+	padding-bottom: 3ex;
+}
+.day .day-table {
+	table-layout: auto;
+}
+.day-table .time {
+	padding: 1ex 0 0 1ex;
+	width: 20%;
+	line-height: 1em;
+	vertical-align: top;
+	text-align: left;
+}
+.day-table .session-block {
+	width: 100%;
+	padding-left: 7%;
+	line-height: 1.5em;
+	vertical-align: top;
+	text-align: left;
+}
+.day-table .block-title {
+	width: 100%;
+	/*white-space: wrap;*/
+	line-height: 1.5em;
+	vertical-align: top;
+	text-align: left;
+}
+.day-table .speaker {
+	font-weight: medium; /*bold;*/
+}
+.day-table .talk-title {
+	font-weight: medium; /*bold;*/
+	font-family: serif;
+	font-style: italic;
+}
+.day-table .abstract {
+	display: none; /*block;*/
+	width: 95%;
+	font-family: serif;
+	margin-left: 1.2em;
+	margin-right: 1.2em;
+}
+.day-table .place {
+	font-size: 0.8em;
+	/*font-weight: bold;*/
+	color: var(--halfsmoke); /*var(--halfsmoke);*/
+	white-space: nowrap;
+	display: block;
+}
+
+
+/****************************
+* Style the empty space before the footer
+*****************************/
+.emptyspace {
+		background-color: var(--antiflashwhite); /*pink;*/
+		padding: 4rem;
+}
+
+/****************************
+* Style the footer
+*****************************/
+
+.footer {
+	padding: 10px;
+	width: 100%;
+	background-color: var(--raisinblack);
+	color: white;
+	container-name: thefooter;
+	container-type: inline-size;
+}
+
+	/*footer elements*/
+	.myfooterblock {
+		float: left;
+		width: 100%;
+		background-color: var(--raisinblack); /*pink;*/
+		display: grid;
+	}
+		
+	.footerparent {
+		width: 20rem; /*50%;*/
+		padding: 25px;
+		margin: 0.25rem 0;
+		border-radius: 0.25rem;
+		background-color: var(--raisinblack); /*rosybrown;*/
+		color: white;
+	}
+	
+	.footerparent a {
+		color: white;
+		text-decoration: none;
+	}
+	
+	.footerparent a:hover {
+		color: olive; /*lavender;*/
+	}
+	
+	
+	@container thefooter (min-width: 500px) {
+		.footerparent {
+			width: 20rem;
+			margin: 0.25rem 0.25rem;
+		}
+		.myfooterblock {
+			display: flex;
+		}
+	}
+	.footerparenttitle {
+		font-weight: bold;
+		color: coral;
+	}
