@@ -86,6 +86,7 @@ body, html {
     height: auto; /*Leave is as auto.  If we make it 100%; instead then position:sticky doesn't work...*/
 	background-color: var(--antiflashwhite);
 	font-family: sans-serif;
+	overflow: scroll;
 }
 
 
@@ -104,7 +105,7 @@ body, html {
 	.mynavblock {
 		width: 100%;
 		background-color: var(--halfsmoke); /*pink;*/
-		overflow: scroll;
+		/*overflow: scroll;*/
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		container-name: menublock;
