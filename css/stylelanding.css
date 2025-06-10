@@ -104,6 +104,8 @@ body, html {
 	.mynavblock {
 		width: 100%;
 		background-color: var(--halfsmoke); /*pink;*/
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
 		container-name: menublock;
 		container-type: inline-size;
 	}
@@ -124,11 +126,11 @@ body, html {
 		
 	.parent {
 		width: 50%;
-		padding: 0.25rem; /*10px;*/
-		margin: 0.25rem 0;
+		padding: 0.25rem 0.25rem; /*10px;*/
+		margin: 0.25rem 0.25rem;
 		border-radius: 0.25rem;
 		background-color: var(--smoke); /*rosybrown;*/
-		position: relative; /*(added 06-09-2025 836pm)*/
+		display: block;
 		container-name: parentblock;
 		container-type: inline-size;
 	}
@@ -156,8 +158,6 @@ body, html {
 			margin-left: 2rem;
 			border-radius: 0.25rem;
 			background-color: var(--bone);
-			position: absolute; /*(added 06092025 838pm)*/
-			z-index: 1; /*(added 06092025 843pm)*/
 		}
 			.child {
 				width: 100%;
