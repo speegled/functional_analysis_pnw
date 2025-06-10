@@ -128,7 +128,7 @@ body, html {
 		margin: 0.25rem 0;
 		border-radius: 0.25rem;
 		background-color: var(--smoke); /*rosybrown;*/
-		position: relative; /*(added 06-09-2025)*/
+		position: relative; /*(added 06-09-2025 836pm)*/
 		container-name: parentblock;
 		container-type: inline-size;
 	}
@@ -156,6 +156,7 @@ body, html {
 			margin-left: 2rem;
 			border-radius: 0.25rem;
 			background-color: var(--bone);
+			position: absolute; /*(added 06092025 838pm)*/
 		}
 			.child {
 				width: 100%;
