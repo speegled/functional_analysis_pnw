@@ -96,7 +96,6 @@ body, html {
 .header {
 	width: 100%;
 	background-color: var(--antiflashwhite);
-	position: relative; /*(added 06-09-2025 757pm*/
 	/*position: sticky;
 	top: 0ex;*/	
 }
@@ -105,8 +104,6 @@ body, html {
 	.mynavblock {
 		width: 100%;
 		background-color: var(--halfsmoke); /*pink;*/
-		position: absolute; /*(added 06-09-2025 757pm*/
-		z-index: 1; /*(added 06-09-2025 757pm*/
 		container-name: menublock;
 		container-type: inline-size;
 	}
@@ -131,8 +128,6 @@ body, html {
 		margin: 0.25rem 0;
 		border-radius: 0.25rem;
 		background-color: var(--smoke); /*rosybrown;*/
-		position: absolute;  /*(added 06-09-2025 757pm*/
-		z-index: 2; /*(added 06-09-2025 757pm*/
 		container-name: parentblock;
 		container-type: inline-size;
 	}
@@ -173,15 +168,12 @@ body, html {
 		.children {
 			display: none;
 			position: absolute;
-			z-index: 3;  /*(added 06-09-2025 757pm*/
 		}
 		.parent:hover {
 				background-color: var(--raisinblack);
 		}
 		.parent:hover .children{
 			display:block;
-			position: absolute; /*(added 06-09-2025 757pm*/
-			z-index: 3; /*(added 06-09-2025 757pm*/
 		}
 
 
