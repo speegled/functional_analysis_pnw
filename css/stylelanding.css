@@ -410,3 +410,11 @@ td {
 		font-weight: bold;
 		color: coral;
 	}
+.responsive-banner-img {
+    width: 100%; /* Keep width at 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60vh; /* Set a maximum height in pixels for larger screens */
+    /* Or use viewport units for more fluid responsiveness: */
+    /* max-height: 30vh; */ /* Max height is 30% of viewport height */
+    object-fit: cover; /* This will crop the image if necessary to fit the container while maintaining aspect ratio */
+}
