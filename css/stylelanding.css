@@ -139,14 +139,14 @@ body, html {
 	}
 	
 	.parent a {
-	/*float: left;*/
-    /*float: none;*/
-    display: block;
-    width: 100%;
-	padding: 12px;
-	color: white;
-	font-size: 17px;
-    text-align: left;
+		/*float: left;*/
+    		/*float: none;*/
+    		display: block;
+    		width: 100%;
+		padding: 12px;
+		color: white;
+		font-size: 17px;
+    		text-align: left;
 	}		
 		.children {
 			width: 87cqi;/*75cqi;*/
