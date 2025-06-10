@@ -86,7 +86,7 @@ body, html {
     height: auto; /*Leave is as auto.  If we make it 100%; instead then position:sticky doesn't work...*/
 	background-color: var(--antiflashwhite);
 	font-family: sans-serif;
-	overflow: scroll;
+	/*overflow: scroll;*/
 }
 
 
