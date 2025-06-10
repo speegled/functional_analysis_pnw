@@ -157,6 +157,7 @@ body, html {
 			border-radius: 0.25rem;
 			background-color: var(--bone);
 			position: absolute; /*(added 06092025 838pm)*/
+			z-index: 1; /*(added 06092025 843pm)*/
 		}
 			.child {
 				width: 100%;
